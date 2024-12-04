@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root {
+    --red: #d63a25;
+    --white: #fff;
+    --dark: #1e1c2a;
+}
+
+body {
+    color: var(--dark);
+    background: var(--white);
+}
+
+/* Cabeçalho reduzido */
+.navigation {
+    display: flex;
+    align-items: center; /* Alinha verticalmente */
+    justify-content: space-between; /* Espaça os itens */
+    padding: 5px 20px; /* Reduzido ainda mais */
+    height: 60px; /* Altura fixa menor */
+    box-shadow: 0 0.1rem 0.3rem #ccc;
+    width: 100%;
+    background: var(--white);
+    position: fixed;
+    z-index: 10;
+    transition: all 0.5s;
+}
+
+/* Logo menor */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 2px; /* Menor espaçamento entre imagem e texto */
+    font-size: 1rem; /* Texto menor */
+}
+
+.logo-img {
+    width: 100px; /* Tamanho reduzido da imagem */
+    height: auto;
+}
+
+.navigation ul{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.navigation ul li a{
+    color: var(--dark);
+    font-size: 17px;
+    font-weight: 500;
+    transition: all 0.5s;
+}
+.navigation ul li a:hover{
+    color: var(--red);
+}
+.navigation i{
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+.menu{
+    cursor: pointer;
+    display: none;
+}
+.menu .bar{
+    display: block;
+    width: 28px;
+    height: 3px;
+    border-radius: 3px;
+    background: var(--dark);
+    margin: 5px auto;
+    transition: all 0.3s;
+}
+.menu .bar:nth-child(1),
+.menu .bar:nth-child(3){
+    background: var(--red);
+}
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10%;
+    gap: 2rem;
+
+}
+.home-text{
+    max-width: 37rem;
+}
+.home-text .text-h4{
+    font-size: 1.5rem;
+    color: var(--red);
+    margin-bottom: 0rem;
+    padding-top: 100px;  /* Ajuste conforme necessário */
+}
+.home-text .text-h1{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    line-height: 4rem;
+}
+.home-text p{
+    margin-bottom: 2rem;
+}
+.home-btn{
+    padding: 15px 45px;
+    background: var(--red);
+    color: var(--white);
+    border-radius: 10px;
+    font-weight: 700;
+    transition: all 0.5s;
+}
+.home-btn:hover{
+    background: #fc4c35;
+}
+.home-img img{
+    margin-top: 10rem;  /* Adicione espaço acima da imagem */
+    width: 70%;
+}
+@media (max-width:785px) {
+    .navigation{
+        padding: 18px 20px;
+    }
+    .menu{
+        display: block;
+    }
+    .menu.ativo .bar:nth-child(1){
+        transform:  translateY(8px) rotate(45deg);
+    }
+    .menu.ativo .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu.ativo .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .nav-menu{
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        background: var(--white);
+        gap: -10px;
+        transition: 0.3s;
+    }
+    .nav-menu.ativo{
+        right: 0;
+    }
+    .nav-item{
+        margin: 16px 0;
+    }
+    /*main*/
+    .home{
+        padding: 100px 2%;
+        flex-direction: column;
+        text-align: center;
+        overflow: hidden;
+        gap: 5rem;
+    }
+    .home .text-h4{
+        font-size: 20px;
+    }
+    .home .text-h1{
+        font-size: 2.5rem;
+        line-height: 3rem;
+    }
+    .home p{
+        font-size: 20px;
+    }
+    .home-img{
+        width: 100%;
+    }
+}
+.produtos {
+    text-align: center;
+    padding: 50px 10%;
+    background-color: #f5f5f5;
+}
+
+.produto-lista {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.produto {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center; /* Garante que o conteúdo da descrição fique centralizado */
+    display: flex;
+    flex-direction: column; /* Alinha o conteúdo em coluna */
+    justify-content: space-between; /* Espacia o conteúdo */
+}
+
+.produto img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+.produtos h2 {
+    margin-top: 9px;  /* Desce o texto 5px */
+    font-size: 2rem;   /* Tamanho da fonte do título */
+    color: #333;       /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+    padding-bottom: 10px; /* Se necessário, pode adicionar um espaço inferior */
+}
+
+.produto h3 {
+    margin-top: 10px;
+    color: #333;
+}
+
+.produto p {
+    margin: 10px 0;
+    color: #666;
+}
+
+.detalhes-btn {
+    background-color: #d63a25;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: auto; /* Garante que o botão fique no final do card */
+    align-self: center; /* Alinha o botão ao centro */
+}
+
+.detalhes-btn:hover {
+    background-color: #fc4c35;
+}
+
+.load-more-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.3s;
+}
+
+.load-more-btn:hover {
+    background-color: #45a049;
+}
+.home-btn {
+    transform: scale(0.9); /* Botão menor */
+    transition: transform 0.3s ease;
+}
+
+.home-btn {
+    background-color: #d63a25; /* Cor original */
+    background-color: #ff6347; /* Cor mais suave */
+    color: #fff;
+    padding: 10px 30px;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.home-btn:hover {
+    background-color: #fc4c35; /* Cor mais chamativa ao passar o mouse */
+}
+
+.home-btn:hover {
+    transform: scale(1); /* Ao passar o mouse, o botão volta ao tamanho normal */
+}
